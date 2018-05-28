@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <title>学生信息管理系统</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'infosys/weui_v1.0.2.min.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'infosys/iconfont.css' %}">
+        <script src="{% static 'infosys/index.js' %}"></script>
+        <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+        <style type="text/css">
+        p {
+            font-family: Microsoft YaHei;
+        }
+        .container .page__hd {
+            margin: 20px 10px;
+        }
+        .container .page__hd img {
+            height: 60px;
+        }
+        .container .page__hd p {
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            margin-top: 10px;
+            background-image: url()
+        }
+        .weui-grids div {
+            height: 35px;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        </style>
+    </head>
+    <body>
+        <div id="container" class="container">
+            <div class="page__hd">
+                <img src="{% static 'infosys/logo.png' %}">
+                <p class="page__title">
+                   家校信息沟通平台
+                </p>
+            </div>
+            <div></div>
+            <div class="weui-grids">
+                <a class="weui-grid" id="profile">
+                    <div style="background-image: url('{% static 'infosys/bag.png' %}')">
+                    </div>
+                    <p class="weui-grid__label">基本信息</p>
+                </a>
+                <a class="weui-grid" id="watchScore">
+                    <div style="background-image: url('{% static 'infosys/text2.png' %}')">
+                    </div>
+                    <p class="weui-grid__label">成绩查询</p>
+                </a>
+                <a class="weui-grid" id="watchCadre">
+                    <div style="background-image: url('{% static 'infosys/sign.png' %}')">
+                    </div>
+                    <p class="weui-grid__label">干部任职</p>
+                </a>
+                <a class="weui-grid" id="watchRewardPunish">
+                    <div style="background-image: url('{% static '/infosys/text3.png' %}')">
+                    </div>
+                    <p class="weui-grid__label">奖惩情况</p>
+                </a>
+                <a class="weui-grid">
+                    <div style="background-image: url('{% static 'infosys/house.png' %}')">
+                    </div>
+                    <p class="weui-grid__label">专业培养计划</p>
+                </a>
+                <a class="weui-grid" id="leaves">
+                    <div style="background-image: url('{% static 'infosys/coffe.png' %}')">
+                    </div>
+                    <p class="weui-grid__label">请销假记录</p>
+                </a>
+                <a class="weui-grid" id="watchCalendar">
+                    <div style="background-image: url('{% static 'infosys/text1.png' %}')">
+                    </div>
+                    <p class="weui-grid__label">假期时间安排</p>
+                </a>
+                <a class="weui-grid" id="credit">
+                    <div style="background-image: url('{% static 'infosys/text4.png' %}')">
+                    </div>
+                    <p class="weui-grid__label">毕业学分要求</p>
+                </a>
+                <a class="weui-grid" id="ask">
+                    <div style="background-image: url('{% static 'infosys/text1.png' %}')">
+                    </div>
+                    <p class="weui-grid__label">我要提问</p>
+                </a>
+            </div>
+        </div>
+        <script>
+            let username = localStorage.getItem('username');
+            $('#profile').attr('href', 'http://127.0.0.1:8000/profile/?username=' + username);
+            $('#leaves').attr('href', 'http://127.0.0.1:8000/leaves/?username=' + username);
+            $('#credit').attr('href', 'http://127.0.0.1:8000/credit/?username=' + username);
+            $('#watchScore').attr('href', 'http://127.0.0.1:8000/watch-score-cadre-rewardpunish/?username=' + username);
+            $('#watchCadre').attr('href', 'http://127.0.0.1:8000/watch-score-cadre-rewardpunish/?username=' + username);
+            $('#watchRewardPunish').attr('href', 'http://127.0.0.1:8000/watch-score-cadre-rewardpunish/?username=' + username);
+            $('#watchCalendar').attr('href', 'http://127.0.0.1:8000/watch-calendar/?username=' + username);
+            $('#ask').attr('href', 'http://127.0.0.1:8000/ask/');
+        </script>
+    </body>
+</html>

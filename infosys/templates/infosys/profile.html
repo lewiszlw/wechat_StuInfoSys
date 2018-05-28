@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基本信息</title>
+    <link rel="stylesheet" href="{% static 'infosys/weui_v1.0.2.min.css' %}" />
+    <style>
+        body {
+            background-color: #f8f8f8
+        }
+    </style>
+</head>
+<body>
+    <div class="weui-cells__title">基本信息</div>
+    <div class="weui-cells">
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><label class="weui-label">姓名</label></div>
+            <div class="weui-cell__bd"><input class="weui-input" id="name" readonly value="{{ student.name }}"></div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><label class="weui-label">学号</label></div>
+            <div class="weui-cell__bd"><input class="weui-input" id="uid" readonly value="{{ student.no }}"></div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><label class="weui-label">性别</label></div>
+            <div class="weui-cell__bd"><input class="weui-input" id="sex" readonly value="{{ student.gender }}"></div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><label class="weui-label">身份证号</label></div>
+            <div class="weui-cell__bd"><input class="weui-input" id="idcard" readonly value="{{ student.identity }}"></div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><label class="weui-label">民族</label></div>
+            <div class="weui-cell__bd"><input class="weui-input" id="nation" readonly value="{{ student.nation }}"></div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><label class="weui-label">专业</label></div>
+            <div class="weui-cell__bd"><input class="weui-input" id="major" readonly value="{{ student.major }}"></div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><label class="weui-label">校区</label></div>
+            <div class="weui-cell__bd"><input class="weui-input" id="schoolZone" readonly value="{{ student.zone }}"></div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><label class="weui-label">班级</label></div>
+            <div class="weui-cell__bd"><input class="weui-input" id="clazz" readonly value="{{ student.classno }}"></div>
+        </div>
+    </div>
+    <a href="../main/" class="weui-btn weui-btn_primary">确认</a>
+    <script src="../../lib/jquery-3.1.1.js"></script>
+    <script>
+        var token = window.localStorage.getItem('token')
+        $.ajax({
+            url: 'https://www.whutsims.com/be/student/getMyInfo.do',
+            method: 'POST',
+            data: { token: token },
+            success:function (res) {
+                $('#name').val(res.data.name)
+                $('#uid').val(res.data.uid)
+                $('#idcard').val(res.data.idcard)
+                $('#nation').val(res.data.nation)
+                $('#sex').val(res.data.sex)
+                $('#idcard').val(res.data.idcard)
+                $('#major').val(res.data.major)
+                $('#schoolZone').val(res.data.schoolZone)
+                $('#clazz').val(res.data.clazz)
+            }
+        })
+    </script>
+</body>
+</html>

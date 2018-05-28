@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <title>家校信息沟通平台</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'infosys/weui_v1.0.2.min.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'infosys/iconfont.css' %}">
+        <script src="{% static 'infosys/index.js' %}"></script>
+        <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+        <style type="text/css">
+        p {
+            font-family: Microsoft YaHei;
+        }
+        .container .page__hd {
+            margin: 20px 10px;
+        }
+        .container .page__hd img {
+            height: 60px;
+        }
+        .container .page__hd p {
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            margin-top: 10px;
+            background-image: url()
+        }
+        .weui-grids div {
+            height: 35px;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        </style>
+    </head>
+    <body>
+        <div id="container" class="container">
+            <div class="page__hd">
+                <img src="{% static 'infosys/logo.png' %}">
+                <p class="page__title">
+                   家校信息沟通平台（教师）
+                </p>
+            </div>
+            <div></div>
+            <div class="weui-grids">
+                <a class="weui-grid" id="answer">
+                    <div style="background-image: url('{% static '/infosys/text3.png' %}')">
+                    </div>
+                    <p class="weui-grid__label">回答提问</p>
+                </a>
+            </div>
+        </div>
+        <script>
+            let username = localStorage.getItem('username');
+            $('#answer').attr('href', 'http://127.0.0.1:8000/answer/?username=' + username);
+        </script>
+    </body>
+</html>

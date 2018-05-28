@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <title>教师相关</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'infosys/weui_v1.0.2.min.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'infosys/iconfont.css' %}">
+        <script src="{% static 'infosys/index.js' %}"></script>
+        <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+        <style type="text/css">
+        p {
+            font-family: Microsoft YaHei;
+        }
+        .container .page__hd {
+            margin: 20px 10px;
+        }
+        .container .page__hd img {
+            height: 60px;
+        }
+        .container .page__hd p {
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            margin-top: 10px;
+            background-image: url()
+        }
+        .weui-grids div {
+            height: 35px;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        </style>
+    </head>
+    <body>
+        <div id="container" class="container">
+            <div class="weui-grids">
+                <a class="weui-grid" id="listTeacher">
+                    <div style="background-image: url('{% static 'infosys/bag.png' %}')">
+                    </div>
+                    <p class="weui-grid__label">查看所有教师</p>
+                </a>
+                <a class="weui-grid" id="addTeacher">
+                    <div style="background-image: url('{% static 'infosys/sign.png' %}')">
+                    </div>
+                    <p class="weui-grid__label">添加教师</p>
+                </a>
+            </div>
+        </div>
+        <script>
+            let username = localStorage.getItem('username');
+            $('#listTeacher').attr('href', 'http://127.0.0.1:8000/list-teacher/');
+            $('#addTeacher').attr('href', 'http://127.0.0.1:8000/add-teacher/');
+        </script>
+    </body>
+</html>

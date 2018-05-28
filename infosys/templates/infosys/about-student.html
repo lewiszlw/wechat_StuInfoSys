@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <title>学生相关</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'infosys/weui_v1.0.2.min.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'infosys/iconfont.css' %}">
+        <script src="{% static 'infosys/index.js' %}"></script>
+        <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+        <style type="text/css">
+        p {
+            font-family: Microsoft YaHei;
+        }
+        .container .page__hd {
+            margin: 20px 10px;
+        }
+        .container .page__hd img {
+            height: 60px;
+        }
+        .container .page__hd p {
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            margin-top: 10px;
+            background-image: url()
+        }
+        .weui-grids div {
+            height: 35px;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        </style>
+    </head>
+    <body>
+        <div id="container" class="container">
+            <div class="page__hd">
+                <img src="{% static 'infosys/logo.png' %}">
+                <p class="page__title">
+                    家校信息沟通平台
+                </p>
+            </div>
+            <div class="weui-grids">
+                <a class="weui-grid" id="listStudent">
+                    <div style="background-image: url('{% static '/infosys/text3.png' %}')">
+                    </div>
+                    <p class="weui-grid__label">查看所有学生信息</p>
+                </a>
+                <a class="weui-grid" id="addStudent">
+                    <div style="background-image: url('{% static 'infosys/bag.png' %}')">
+                    </div>
+                    <p class="weui-grid__label">添加学生</p>
+                </a>
+                <a class="weui-grid" id="batchAddStudent">
+                    <div style="background-image: url('{% static 'infosys/text2.png' %}')">
+                    </div>
+                    <p class="weui-grid__label">批量添加学生</p>
+                </a>
+                <a class="weui-grid" id="batchAddCredit">
+                    <div style="background-image: url('{% static 'infosys/text2.png' %}')">
+                    </div>
+                    <p class="weui-grid__label">批量添加学生毕业学分</p>
+                </a>
+                <a class="weui-grid" id="batchAddLeave">
+                    <div style="background-image: url('{% static 'infosys/text2.png' %}')">
+                    </div>
+                    <p class="weui-grid__label">批量添加学生请销假记录</p>
+                </a>
+                <a class="weui-grid" id="scoreCadreRewardPunish">
+                    <div style="background-image: url('{% static 'infosys/coffe.png' %}')">
+                    </div>
+                    <p class="weui-grid__label">上传成绩、干部任职和奖惩情况</p>
+                </a>
+                <a class="weui-grid" id="calendar">
+                    <div style="background-image: url('{% static 'infosys/house.png' %}')">
+                    </div>
+                    <p class="weui-grid__label">上传假期时间安排</p>
+                </a>
+            </div>
+        </div>
+        <script>
+            let username = localStorage.getItem('username');
+            $('#listStudent').attr('href', 'http://127.0.0.1:8000/list-student/');
+            $('#addStudent').attr('href', 'http://127.0.0.1:8000/add-student/');
+            $('#batchAddStudent').attr('href', 'http://127.0.0.1:8000/batch-add-student/');
+            $('#batchAddCredit').attr('href', 'http://127.0.0.1:8000/batch-add-credit/');
+            $('#batchAddLeave').attr('href', 'http://127.0.0.1:8000/batch-add-leave/');
+            $('#scoreCadreRewardPunish').attr('href', 'http://127.0.0.1:8000/score-cadre-rewardpunish/');
+            $('#calendar').attr('href', 'http://127.0.0.1:8000/calendar/');
+        </script>
+    </body>
+</html>

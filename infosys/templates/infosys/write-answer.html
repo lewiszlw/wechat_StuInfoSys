@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>写回答</title>
+
+    <link href="http://www.jq22.com/jquery/bootstrap-3.3.4.css" rel="stylesheet">
+
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <!-- form: -->
+            <section>
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="page-header">
+                        <h2>写回答</h2>
+                    </div>
+
+                    <form id="defaultForm" class="form-horizontal">
+                        {% csrf_token %}
+                        <input type="hidden" id="questionId" value="{{ question.id }}" />
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">提问者</label>
+                            <div class="col-lg-5">
+                                <input type="text" class="form-control" readonly value="{{ question.student.name }}" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">问题类型</label>
+                            <div class="col-lg-5">
+                                <input type="text" class="form-control" readonly value="{{ question.type }}" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">问题描述</label>
+                            <div class="col-lg-5">
+                                <textarea class="form-control" rows="5" readonly>{{ question.desc }}</textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">回答</label>
+                            <div class="col-lg-5">
+                                <textarea class="form-control" rows="5" id="reply">{{ question.reply }}</textarea>
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <div class="col-lg-9 col-lg-offset-3">
+                                <button type="submit" class="btn btn-primary" id="submitBtn">提交</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+            <!-- :form -->
+        </div>
+    </div>
+
+<script type="text/javascript">
+$('#submitBtn').click(function() {
+    let username = localStorage.getItem('username');
+    let questionId = $('#questionId').val()
+    let reply = $('#reply').val()
+
+    $.post('http://127.0.0.1:8000/reply/',
+        {'username': username, 'questionId': questionId, 'reply': reply, 'csrfmiddlewaretoken': '{{ csrf_token }}'},
+        function(data) {
+            if(data == 'fail') {
+                alert('回答提交失败，请检查后重新提交');
+                window.location.href="http://127.0.0.1:8000/write-answer/?questionId=" + questionId;
+            } else {
+                alert('提交成功');
+                window.location.href="http://127.0.0.1:8000/answer/?username=" + username;
+            }
+        }
+    );
+});
+
+</script>
+</body>
+</html>

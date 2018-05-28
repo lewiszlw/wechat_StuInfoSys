@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>我要提问</title>
+
+    <link href="http://www.jq22.com/jquery/bootstrap-3.3.4.css" rel="stylesheet">
+
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <!-- form: -->
+            <section>
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="page-header">
+                        <h2>我要提问</h2>
+                    </div>
+
+                    <form id="defaultForm" class="form-horizontal">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">提问类型</label>
+                            <div class="col-lg-5">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="question-type" value="1" /> 推免保送
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="question-type" value="2" /> 考研深造
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="question-type" value="3" /> 出国留学
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="question-type" value="4" /> 就业
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="question-type" value="5" /> 应征入伍
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">指定老师</label>
+                            <div class="col-lg-5">
+                                    <select class="form-control" id="teacher">
+      									<option value="0">所有</option>
+                                        {% if teachers %}
+                                            {% for teacher in teachers %}
+                                                <option value="{{ teacher.id }}">{{ teacher.name}}</option>
+                                            {% endfor %}
+                                        {% endif %}
+
+    								</select>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">问题内容</label>
+                            <div class="col-lg-5">
+                                <textarea class="form-control" rows="5" id="question"></textarea>
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <div class="col-lg-9 col-lg-offset-3">
+                                <button type="submit" class="btn btn-primary" id="submitBtn">提交</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+            <!-- :form -->
+        </div>
+    </div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#resetBtn').click(function() {
+        $('#defaultForm').data('bootstrapValidator').resetForm(true);
+    });
+});
+
+$('#submitBtn').click(function() {
+    let username = localStorage.getItem('username');
+    let questionType = $("input[name='question-type']:checked").val();
+    let teacherId = $('#teacher').val();
+    let question = $('#question').val()
+    $.post('http://127.0.0.1:8000/submit_question/',
+        {'username': username, 'questionType': questionType, 'teacherId': teacherId, 'question': question, 'csrfmiddlewaretoken': '{{ csrf_token }}'},
+        function(data) {
+            if(data == 'fail') {
+                alert('问题提交失败，请检查后重新提交');
+                window.location.href="http://127.0.0.1:8000/ask/";
+            } else {
+                alert('提交成功');
+                window.location.href="http://127.0.0.1:8000/main/";
+            }
+        }
+    );
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+[client]
+host = localhost
+database = TestSysInfo
+user = root
+password = 123
+default-character-set = utf8

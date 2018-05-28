@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>添加学生</title>
+
+    <link href="http://www.jq22.com/jquery/bootstrap-3.3.4.css" rel="stylesheet">
+
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <!-- form: -->
+            <section>
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="page-header">
+                        <h2>添加学生</h2>
+                    </div>
+
+                    <form id="defaultForm" class="form-horizontal">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">姓名</label>
+                            <div class="col-lg-5">
+                                <input type="text" class="form-control" id="name"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">学号</label>
+                            <div class="col-lg-5">
+                                <input type="text" class="form-control" id="no"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">性别</label>
+                            <div class="col-lg-5">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="gender" value="1" checked /> 男
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="gender" value="2" /> 女
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">身份证号</label>
+                            <div class="col-lg-5">
+                                <input type="text" class="form-control" id="identity"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">民族</label>
+                            <div class="col-lg-5">
+                                <input type="text" class="form-control" id="nation"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">专业</label>
+                            <div class="col-lg-5">
+                                <input type="text" class="form-control" id="major"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">校区</label>
+                            <div class="col-lg-5">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="zone" value="1" checked /> 马区
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="zone" value="2" /> 余区
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">班级</label>
+                            <div class="col-lg-5">
+                                <input type="text" class="form-control" id="classno"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-lg-9 col-lg-offset-3">
+                                <button type="submit" class="btn btn-primary" id="submitBtn">添加</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+            <!-- :form -->
+        </div>
+    </div>
+
+<script type="text/javascript">
+$('#submitBtn').click(function() {
+    let username = localStorage.getItem('username');
+    let name = $('#name').val()
+    let no = $('#no').val()
+    let gender = $("input[name='gender']:checked").val();
+    let identity = $('#identity').val()
+    let nation = $('#nation').val()
+    let major = $('#major').val()
+    let zone = $("input[name='zone']:checked").val();
+    let classno = $('#classno').val()
+
+    $.post('http://127.0.0.1:8000/apply-add-student/',
+        {'username': username, 'name': name, 'no': no, 'gender': gender, 'identity': identity, 'nation': nation, 'major': major, 'zone': zone, 'classno': classno,'csrfmiddlewaretoken': '{{ csrf_token }}'},
+        function(data) {
+            if(data == 'fail') {
+                alert('添加失败，请检查后重新提交');
+                window.location.href="http://127.0.0.1:8000/add-student/";
+            } else {
+                alert('添加成功');
+                window.location.href="http://127.0.0.1:8000/about-student/";
+            }
+        }
+    );
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>毕业学分要求</title>
+    <link rel="stylesheet" href="{% static 'infosys/weui_v1.0.2.min.css' %}" />
+    <style>
+        body {
+            background-color: #f8f8f8
+        }
+    </style>
+</head>
+<body>
+    <div class="weui-cells__title">毕业学分要求</div>
+    <div class="weui-cells">
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><label class="weui-label">毕业学分</label></div>
+            <div class="weui-cell__bd"><input class="weui-input" readonly value="{{ credit.graduation }}"></div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><label class="weui-label">已修学分</label></div>
+            <div class="weui-cell__bd"><input class="weui-input" readonly value="{{ credit.obtain }}"></div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><label class="weui-label">所需学分</label></div>
+            <div class="weui-cell__bd"><input class="weui-input" readonly value="{{ credit.need }}"></div>
+        </div>
+    </div>
+    <a href="../main/" class="weui-btn weui-btn_primary">确认</a>
+</body>
+</html>

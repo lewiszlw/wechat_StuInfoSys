@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <title>学生信息管理系统</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'infosys/weui_v1.0.2.min.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'infosys/iconfont.css' %}">
+        <script src="{% static 'infosys/index.js' %}"></script>
+        <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+        <style type="text/css">
+        p {
+            font-family: Microsoft YaHei;
+        }
+        .container .page__hd {
+            margin: 20px 10px;
+        }
+        .container .page__hd img {
+            height: 60px;
+        }
+        .container .page__hd p {
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            margin-top: 10px;
+            background-image: url()
+        }
+        .weui-grids div {
+            height: 35px;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        </style>
+    </head>
+    <body>
+        <div id="container" class="container">
+            <div class="page__hd">
+                <img src="{% static 'infosys/logo.png' %}">
+                <p class="page__title">
+                   家校信息沟通平台（管理员）
+                </p>
+            </div>
+            <div></div>
+            <div class="weui-grids">
+                <a class="weui-grid" id="about-student">
+                    <div style="background-image: url('{% static 'infosys/bag.png' %}')">
+                    </div>
+                    <p class="weui-grid__label">学生相关</p>
+                </a>
+                <a class="weui-grid" id="about-teacher">
+                    <div style="background-image: url('{% static 'infosys/text2.png' %}')">
+                    </div>
+                    <p class="weui-grid__label">教师相关</p>
+                </a>
+            </div>
+        </div>
+        <script>
+            let username = localStorage.getItem('username');
+            $('#about-student').attr('href', 'http://127.0.0.1:8000/about-student/');
+            $('#about-teacher').attr('href', 'http://127.0.0.1:8000/about-teacher/');
+        </script>
+    </body>
+</html>
