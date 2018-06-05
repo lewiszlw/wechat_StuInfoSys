@@ -45,7 +45,7 @@
             let username = $('#username').val();
             let password = $('#password').val();
             let userType = $("input[name='user-type']:checked").val();
-            $.post('http://127.0.0.1:8000/login/',
+            $.post('/login/',
                 {username: username, password: password, userType: userType, csrfmiddlewaretoken: '{{ csrf_token }}'},
                 function(data){
                     if(data == 'fail') {

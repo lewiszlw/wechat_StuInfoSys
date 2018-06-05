@@ -2,28 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94f6f560-37bd-4c82-ae3b-d745180e5baf" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/infosys/templates/infosys/about-question.html" afterPath="$PROJECT_DIR$/infosys/templates/infosys/about-question.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/infosys/templates/infosys/about-student.html" afterPath="$PROJECT_DIR$/infosys/templates/infosys/about-student.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/infosys/templates/infosys/about-teacher.html" afterPath="$PROJECT_DIR$/infosys/templates/infosys/about-teacher.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/infosys/templates/infosys/add-student.html" afterPath="$PROJECT_DIR$/infosys/templates/infosys/add-student.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/infosys/templates/infosys/add-teacher.html" afterPath="$PROJECT_DIR$/infosys/templates/infosys/add-teacher.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/infosys/templates/infosys/admin-main.html" afterPath="$PROJECT_DIR$/infosys/templates/infosys/admin-main.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/infosys/templates/infosys/answer.html" afterPath="$PROJECT_DIR$/infosys/templates/infosys/answer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/infosys/templates/infosys/ask.html" afterPath="$PROJECT_DIR$/infosys/templates/infosys/ask.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/infosys/templates/infosys/batch-add-credit.html" afterPath="$PROJECT_DIR$/infosys/templates/infosys/batch-add-credit.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/infosys/templates/infosys/batch-add-leave.html" afterPath="$PROJECT_DIR$/infosys/templates/infosys/batch-add-leave.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/infosys/templates/infosys/batch-add-student.html" afterPath="$PROJECT_DIR$/infosys/templates/infosys/batch-add-student.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/infosys/templates/infosys/calendar.html" afterPath="$PROJECT_DIR$/infosys/templates/infosys/calendar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/infosys/templates/infosys/list-student.html" afterPath="$PROJECT_DIR$/infosys/templates/infosys/list-student.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/infosys/templates/infosys/list-teacher.html" afterPath="$PROJECT_DIR$/infosys/templates/infosys/list-teacher.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/infosys/templates/infosys/login.html" afterPath="$PROJECT_DIR$/infosys/templates/infosys/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/infosys/templates/infosys/main.html" afterPath="$PROJECT_DIR$/infosys/templates/infosys/main.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/infosys/templates/infosys/modify-student.html" afterPath="$PROJECT_DIR$/infosys/templates/infosys/modify-student.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/infosys/templates/infosys/modify-teacher.html" afterPath="$PROJECT_DIR$/infosys/templates/infosys/modify-teacher.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/infosys/templates/infosys/root-main.html" afterPath="$PROJECT_DIR$/infosys/templates/infosys/root-main.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/infosys/templates/infosys/score-cadre-rewardpunish.html" afterPath="$PROJECT_DIR$/infosys/templates/infosys/score-cadre-rewardpunish.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/infosys/templates/infosys/teacher-main.html" afterPath="$PROJECT_DIR$/infosys/templates/infosys/teacher-main.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/infosys/templates/infosys/write-answer.html" afterPath="$PROJECT_DIR$/infosys/templates/infosys/write-answer.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -35,36 +17,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/infosys/templates/infosys/main.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="103" column="36" lean-forward="false" selection-start-line="103" selection-start-column="36" selection-end-line="103" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="modify-student.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/infosys/templates/infosys/modify-student.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="147" column="38" lean-forward="false" selection-start-line="147" selection-start-column="38" selection-end-line="147" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="modify-teacher.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/infosys/templates/infosys/modify-teacher.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="81" column="38" lean-forward="false" selection-start-line="81" selection-start-column="38" selection-end-line="81" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="profile.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/infosys/templates/infosys/profile.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -78,10 +30,23 @@
       <file leaf-file-name="root-main.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/infosys/templates/infosys/root-main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="54" column="46" lean-forward="false" selection-start-line="54" selection-start-column="46" selection-end-line="54" selection-end-column="46" />
+            <state relative-caret-position="260">
+              <caret line="40" column="19" lean-forward="false" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#a#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin-main.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/infosys/templates/infosys/admin-main.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="296">
+              <caret line="40" column="19" lean-forward="false" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#a#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1528210966443" expanded="false" signature="2174:2231" ph="..." />
               </folding>
             </state>
           </provider>
@@ -100,8 +65,8 @@
       <file leaf-file-name="teacher-main.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/infosys/templates/infosys/teacher-main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="54" column="39" lean-forward="false" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="39" />
+            <state relative-caret-position="260">
+              <caret line="40" column="19" lean-forward="false" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -127,11 +92,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="write-answer.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="write-answer.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/infosys/templates/infosys/write-answer.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="93" column="38" lean-forward="false" selection-start-line="93" selection-start-column="38" selection-end-line="93" selection-end-column="38" />
+            <state relative-caret-position="454">
+              <caret line="80" column="21" lean-forward="false" selection-start-line="80" selection-start-column="21" selection-end-line="80" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/infosys/templates/infosys/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="940">
+              <caret line="47" column="20" lean-forward="false" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/infosys/templates/infosys/main.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1582">
+              <caret line="103" column="36" lean-forward="false" selection-start-line="103" selection-start-column="36" selection-end-line="103" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -166,13 +151,11 @@
         <option value="$PROJECT_DIR$/infosys/config.py" />
         <option value="$PROJECT_DIR$/infosys/views.py" />
         <option value="$PROJECT_DIR$/wechat_StuInfoSys/urls.py" />
-        <option value="$PROJECT_DIR$/infosys/templates/infosys/login.html" />
         <option value="$PROJECT_DIR$/infosys/templates/infosys/about-question.html" />
         <option value="$PROJECT_DIR$/infosys/templates/infosys/about-student.html" />
         <option value="$PROJECT_DIR$/infosys/templates/infosys/about-teacher.html" />
         <option value="$PROJECT_DIR$/infosys/templates/infosys/add-student.html" />
         <option value="$PROJECT_DIR$/infosys/templates/infosys/add-teacher.html" />
-        <option value="$PROJECT_DIR$/infosys/templates/infosys/admin-main.html" />
         <option value="$PROJECT_DIR$/infosys/templates/infosys/answer.html" />
         <option value="$PROJECT_DIR$/infosys/templates/infosys/ask.html" />
         <option value="$PROJECT_DIR$/infosys/templates/infosys/batch-add-credit.html" />
@@ -184,10 +167,12 @@
         <option value="$PROJECT_DIR$/infosys/templates/infosys/main.html" />
         <option value="$PROJECT_DIR$/infosys/templates/infosys/modify-student.html" />
         <option value="$PROJECT_DIR$/infosys/templates/infosys/modify-teacher.html" />
-        <option value="$PROJECT_DIR$/infosys/templates/infosys/root-main.html" />
         <option value="$PROJECT_DIR$/infosys/templates/infosys/score-cadre-rewardpunish.html" />
-        <option value="$PROJECT_DIR$/infosys/templates/infosys/teacher-main.html" />
         <option value="$PROJECT_DIR$/infosys/templates/infosys/write-answer.html" />
+        <option value="$PROJECT_DIR$/infosys/templates/infosys/login.html" />
+        <option value="$PROJECT_DIR$/infosys/templates/infosys/teacher-main.html" />
+        <option value="$PROJECT_DIR$/infosys/templates/infosys/root-main.html" />
+        <option value="$PROJECT_DIR$/infosys/templates/infosys/admin-main.html" />
       </list>
     </option>
   </component>
@@ -683,17 +668,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/infosys/templates/infosys/admin-main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1360">
-          <caret line="68" column="48" lean-forward="false" selection-start-line="68" selection-start-column="48" selection-end-line="68" selection-end-column="48" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#a#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1528209694025" expanded="false" signature="2124:2181" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/infosys/templates/infosys/answer.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="13">
@@ -774,22 +748,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/infosys/templates/infosys/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="856">
-          <caret line="64" column="50" lean-forward="false" selection-start-line="64" selection-start-column="50" selection-end-line="64" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/infosys/templates/infosys/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="103" column="36" lean-forward="false" selection-start-line="103" selection-start-column="36" selection-end-line="103" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/infosys/templates/infosys/modify-student.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -814,28 +772,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/infosys/templates/infosys/root-main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="54" column="46" lean-forward="false" selection-start-line="54" selection-start-column="46" selection-end-line="54" selection-end-column="46" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#a#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/infosys/templates/infosys/score-cadre-rewardpunish.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="113">
           <caret line="39" column="20" lean-forward="false" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/infosys/templates/infosys/teacher-main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="54" column="39" lean-forward="false" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -858,9 +798,54 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/infosys/templates/infosys/write-answer.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="93" column="38" lean-forward="false" selection-start-line="93" selection-start-column="38" selection-end-line="93" selection-end-column="38" />
+        <state relative-caret-position="454">
+          <caret line="80" column="21" lean-forward="false" selection-start-line="80" selection-start-column="21" selection-end-line="80" selection-end-column="21" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/infosys/templates/infosys/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="940">
+          <caret line="47" column="20" lean-forward="false" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/infosys/templates/infosys/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1582">
+          <caret line="103" column="36" lean-forward="false" selection-start-line="103" selection-start-column="36" selection-end-line="103" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/infosys/templates/infosys/teacher-main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="40" column="19" lean-forward="false" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/infosys/templates/infosys/root-main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="40" column="19" lean-forward="false" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#a#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/infosys/templates/infosys/admin-main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="40" column="19" lean-forward="false" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#a#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1528210966443" expanded="false" signature="2174:2231" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
