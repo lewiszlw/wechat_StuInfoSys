@@ -99,15 +99,15 @@ $('#submitBtn').click(function() {
     let questionType = $("input[name='question-type']:checked").val();
     let teacherId = $('#teacher').val();
     let question = $('#question').val()
-    $.post('http://127.0.0.1:8000/submit_question/',
+    $.post('/submit_question/',
         {'username': username, 'questionType': questionType, 'teacherId': teacherId, 'question': question, 'csrfmiddlewaretoken': '{{ csrf_token }}'},
         function(data) {
             if(data == 'fail') {
                 alert('问题提交失败，请检查后重新提交');
-                window.location.href="http://127.0.0.1:8000/ask/";
+                window.location.href="/ask/";
             } else {
                 alert('提交成功');
-                window.location.href="http://127.0.0.1:8000/main/";
+                window.location.href="/main/";
             }
         }
     );

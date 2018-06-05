@@ -55,7 +55,7 @@
 
                       <td>{{ question.desc }}</td>
                       <td>否</td>
-                      <td><a href="http://127.0.0.1:8000/write-answer/?questionId={{ question.id }}">去回答</a></td>
+                      <td><a href="/write-answer/?questionId={{ question.id }}">去回答</a></td>
                     </tr>
                   {% else %}
                     <tr class="success">
@@ -79,7 +79,7 @@
 
                       <td>{{ question.desc }}</td>
                       <td>是</td>
-                      <td><a href="http://127.0.0.1:8000/write-answer/?questionId={{ question.id }}">去回答</a></td>
+                      <td><a href="/write-answer/?questionId={{ question.id }}">去回答</a></td>
                     </tr>
                   {% endif %}
                 {% endfor %}

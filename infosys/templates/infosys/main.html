@@ -94,14 +94,14 @@
         </div>
         <script>
             let username = localStorage.getItem('username');
-            $('#profile').attr('href', 'http://127.0.0.1:8000/profile/?username=' + username);
-            $('#leaves').attr('href', 'http://127.0.0.1:8000/leaves/?username=' + username);
-            $('#credit').attr('href', 'http://127.0.0.1:8000/credit/?username=' + username);
-            $('#watchScore').attr('href', 'http://127.0.0.1:8000/watch-score-cadre-rewardpunish/?username=' + username);
-            $('#watchCadre').attr('href', 'http://127.0.0.1:8000/watch-score-cadre-rewardpunish/?username=' + username);
-            $('#watchRewardPunish').attr('href', 'http://127.0.0.1:8000/watch-score-cadre-rewardpunish/?username=' + username);
-            $('#watchCalendar').attr('href', 'http://127.0.0.1:8000/watch-calendar/?username=' + username);
-            $('#ask').attr('href', 'http://127.0.0.1:8000/ask/');
+            $('#profile').attr('href', '/profile/?username=' + username);
+            $('#leaves').attr('href', '/leaves/?username=' + username);
+            $('#credit').attr('href', '/credit/?username=' + username);
+            $('#watchScore').attr('href', '/watch-score-cadre-rewardpunish/?username=' + username);
+            $('#watchCadre').attr('href', '/watch-score-cadre-rewardpunish/?username=' + username);
+            $('#watchRewardPunish').attr('href', '/watch-score-cadre-rewardpunish/?username=' + username);
+            $('#watchCalendar').attr('href', '/watch-calendar/?username=' + username);
+            $('#ask').attr('href', '/ask/');
         </script>
     </body>
 </html>

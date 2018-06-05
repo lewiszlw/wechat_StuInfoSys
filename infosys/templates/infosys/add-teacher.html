@@ -67,15 +67,15 @@ $('#submitBtn').click(function() {
     let intro = $('#intro').val()
     let college = $('#college').val()
 
-    $.post('http://127.0.0.1:8000/apply-add-teacher/',
+    $.post('/apply-add-teacher/',
         {'username': username, 'name': name, 'no': no, 'intro': intro, 'college': college, 'csrfmiddlewaretoken': '{{ csrf_token }}'},
         function(data) {
             if(data == 'fail') {
                 alert('添加失败，请检查后重新提交');
-                window.location.href="http://127.0.0.1:8000/add-teacher/";
+                window.location.href="/add-teacher/";
             } else {
                 alert('添加成功');
-                window.location.href="http://127.0.0.1:8000/about-teacher/";
+                window.location.href="/about-teacher/";
             }
         }
     );

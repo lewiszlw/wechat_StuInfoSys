@@ -71,15 +71,15 @@ $('#submitBtn').click(function() {
     let intro = $('#intro').val()
     let college = $('#college').val()
 
-    $.post('http://127.0.0.1:8000/apply-modify-teacher/?teacherId=' + teacherId,
+    $.post('/apply-modify-teacher/?teacherId=' + teacherId,
         {'username': username, 'oldNo': oldNo, 'name': name, 'no': no, 'intro': intro, 'college': college, 'csrfmiddlewaretoken': '{{ csrf_token }}'},
         function(data) {
             if(data == 'fail') {
                 alert('修改失败，请检查后重新提交');
-                window.location.href="http://127.0.0.1:8000/about-teacher/";
+                window.location.href="/about-teacher/";
             } else {
                 alert('修改成功');
-                window.location.href="http://127.0.0.1:8000/list-teacher/";
+                window.location.href="/list-teacher/";
             }
         }
     );

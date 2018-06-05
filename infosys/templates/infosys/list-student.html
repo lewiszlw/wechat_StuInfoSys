@@ -78,7 +78,7 @@
                         {% endif %}
 
                       <td>{{ student.classno }}</td>
-                      <td><a href="http://127.0.0.1:8000/modify-student/?studentId={{ student.id }}">修改</a> / <a href="javascript:void(0)" onclick="showDeleteModal(this)" name="{{ student.id }}">删除</a></td>
+                      <td><a href="/modify-student/?studentId={{ student.id }}">修改</a> / <a href="javascript:void(0)" onclick="showDeleteModal(this)" name="{{ student.id }}">删除</a></td>
                     </tr>
                 {% endfor %}
               {% else %}
@@ -135,13 +135,13 @@
 
     function deleteHaulinfo() {
         let studentId = $("#deleteHaulId").val()
-        $.post('http://127.0.0.1:8000/apply-delete-student/',
+        $.post('/apply-delete-student/',
             {'studentId': studentId, 'csrfmiddlewaretoken': '{{ csrf_token }}'},
             function(data) {
                 if(data == 'fail') {
                     alert('删除失败');
                 } else {
-                    window.location.href="http://127.0.0.1:8000/list-student/";
+                    window.location.href="/list-student/";
                 }
             }
         );

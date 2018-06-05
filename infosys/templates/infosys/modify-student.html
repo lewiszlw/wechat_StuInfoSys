@@ -137,15 +137,15 @@ $('#submitBtn').click(function() {
     let zone = $("input[name='zone']:checked").val();
     let classno = $('#classno').val()
 
-    $.post('http://127.0.0.1:8000/apply-modify-student/?studentId=' + studentId,
+    $.post('/apply-modify-student/?studentId=' + studentId,
         {'username': username, 'oldNo': oldNo, 'name': name, 'no': no, 'gender': gender, 'identity': identity, 'nation': nation, 'major': major, 'zone': zone, 'classno': classno,'csrfmiddlewaretoken': '{{ csrf_token }}'},
         function(data) {
             if(data == 'fail') {
                 alert('修改失败，请检查后重新提交');
-                window.location.href="http://127.0.0.1:8000/about-student/";
+                window.location.href="/about-student/";
             } else {
                 alert('修改成功');
-                window.location.href="http://127.0.0.1:8000/about-student/";
+                window.location.href="/about-student/";
             }
         }
     );

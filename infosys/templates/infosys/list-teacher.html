@@ -50,7 +50,7 @@
                       <td>{{ teacher.no }}</td>
                       <td>{{ teacher.intro }}</td>
                       <td>{{ teacher.college }}</td>
-                      <td><a href="http://127.0.0.1:8000/modify-teacher/?teacherId={{ teacher.id }}">修改</a> / <a href="javascript:void(0)" onclick="showDeleteModal(this)" name="{{ teacher.id }}">删除</a></td>
+                      <td><a href="/modify-teacher/?teacherId={{ teacher.id }}">修改</a> / <a href="javascript:void(0)" onclick="showDeleteModal(this)" name="{{ teacher.id }}">删除</a></td>
                     </tr>
                 {% endfor %}
               {% else %}
@@ -107,13 +107,13 @@
 
     function deleteHaulinfo() {
         let teacherId = $("#deleteHaulId").val()
-        $.post('http://127.0.0.1:8000/apply-delete-teacher/',
+        $.post('/apply-delete-teacher/',
             {'teacherId': teacherId, 'csrfmiddlewaretoken': '{{ csrf_token }}'},
             function(data) {
                 if(data == 'fail') {
                     alert('删除失败');
                 } else {
-                    window.location.href="http://127.0.0.1:8000/list-teacher/";
+                    window.location.href="/list-teacher/";
                 }
             }
         );

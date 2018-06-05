@@ -83,15 +83,15 @@ $('#submitBtn').click(function() {
     let questionId = $('#questionId').val()
     let reply = $('#reply').val()
 
-    $.post('http://127.0.0.1:8000/reply/',
+    $.post('/reply/',
         {'username': username, 'questionId': questionId, 'reply': reply, 'csrfmiddlewaretoken': '{{ csrf_token }}'},
         function(data) {
             if(data == 'fail') {
                 alert('回答提交失败，请检查后重新提交');
-                window.location.href="http://127.0.0.1:8000/write-answer/?questionId=" + questionId;
+                window.location.href="/write-answer/?questionId=" + questionId;
             } else {
                 alert('提交成功');
-                window.location.href="http://127.0.0.1:8000/answer/?username=" + username;
+                window.location.href="/answer/?username=" + username;
             }
         }
     );

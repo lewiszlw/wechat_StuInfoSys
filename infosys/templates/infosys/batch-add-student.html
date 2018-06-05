@@ -32,7 +32,7 @@
     </body>
 	<script>
     $("#input-b1").fileinput({
-        uploadUrl: 'http://127.0.0.1:8000/apply-batch-add-student/',
+        uploadUrl: '/apply-batch-add-student/',
         allowedFileExtensions : ['xls', 'xlsx'],
         overwriteInitial: false,
         maxFileSize: 1000,
@@ -49,11 +49,11 @@
 	$("#input-b1").on("fileuploaded", function (event, data, previewId, index) {
 		if(data['response']['msg'] == 'fail') {
 		    alert('上传失败');
-            window.location.href="http://127.0.0.1:8000/batch-add-student/";
+            window.location.href="/batch-add-student/";
 		}
 		if(data['response']['msg'] == 'success') {
 		    alert('上传成功');
-            window.location.href="http://127.0.0.1:8000/batch-add-student/";
+            window.location.href="/batch-add-student/";
 		}
 	});
 
