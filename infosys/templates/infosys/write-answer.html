@@ -31,7 +31,21 @@
                         <div class="form-group">
                             <label class="col-lg-3 control-label">问题类型</label>
                             <div class="col-lg-5">
-                                <input type="text" class="form-control" readonly value="{{ question.type }}" />
+                                {% if question.type == 1 %}
+                                <input type="text" class="form-control" readonly value="推免保送" />
+                                {% endif %}
+                                {% if question.type == 2 %}
+                                <input type="text" class="form-control" readonly value="考研深造" />
+                                {% endif %}
+                                {% if question.type == 3 %}
+                                <input type="text" class="form-control" readonly value="出国留学" />
+                                {% endif %}
+                                {% if question.type == 4 %}
+                                <input type="text" class="form-control" readonly value="就业" />
+                                {% endif %}
+                                {% if question.type == 5 %}
+                                <input type="text" class="form-control" readonly value="应征入伍" />
+                                {% endif %}
                             </div>
                         </div>
 

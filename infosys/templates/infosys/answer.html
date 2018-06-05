@@ -36,17 +36,49 @@
                   {% if question.is_answered == 0 %}
                     <tr class="danger">
                       <td>{{ question.student.name }}</td>
-                      <td>{{ question.type }}</td>
+
+                      {% if question.type == 1 %}
+                        <td>推免报送</td>
+                      {% endif %}
+                      {% if question.type == 2 %}
+                        <td>考研深造</td>
+                      {% endif %}
+                      {% if question.type == 3 %}
+                        <td>出国留学</td>
+                      {% endif %}
+                      {% if question.type == 4 %}
+                        <td>就业</td>
+                      {% endif %}
+                      {% if question.type == 5 %}
+                        <td>应征入伍</td>
+                      {% endif %}
+
                       <td>{{ question.desc }}</td>
-                      <td>{{ question.is_answered }}</td>
+                      <td>否</td>
                       <td><a href="http://127.0.0.1:8000/write-answer/?questionId={{ question.id }}">去回答</a></td>
                     </tr>
                   {% else %}
                     <tr class="success">
                       <td>{{ question.student.name }}</td>
-                      <td>{{ question.type }}</td>
+
+                      {% if question.type == 1 %}
+                      <td>推免报送</td>
+                      {% endif %}
+                      {% if question.type == 2 %}
+                      <td>考研深造</td>
+                      {% endif %}
+                      {% if question.type == 3 %}
+                      <td>出国留学</td>
+                      {% endif %}
+                      {% if question.type == 4 %}
+                      <td>就业</td>
+                      {% endif %}
+                      {% if question.type == 5 %}
+                      <td>应征入伍</td>
+                      {% endif %}
+
                       <td>{{ question.desc }}</td>
-                      <td>{{ question.is_answered }}</td>
+                      <td>是</td>
                       <td><a href="http://127.0.0.1:8000/write-answer/?questionId={{ question.id }}">去回答</a></td>
                     </tr>
                   {% endif %}

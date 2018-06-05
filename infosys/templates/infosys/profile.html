@@ -25,7 +25,15 @@
         </div>
         <div class="weui-cell">
             <div class="weui-cell__hd"><label class="weui-label">性别</label></div>
-            <div class="weui-cell__bd"><input class="weui-input" id="sex" readonly value="{{ student.gender }}"></div>
+            {% if student.gender == 1 %}
+            <div class="weui-cell__bd"><input class="weui-input" id="sex" readonly value="男"></div>
+            {% endif %}
+            {% if student.gender == 2 %}
+            <div class="weui-cell__bd"><input class="weui-input" id="sex" readonly value="女"></div>
+            {% endif %}
+            {% if student.gender == 3 %}
+            <div class="weui-cell__bd"><input class="weui-input" id="sex" readonly value="未知"></div>
+            {% endif %}
         </div>
         <div class="weui-cell">
             <div class="weui-cell__hd"><label class="weui-label">身份证号</label></div>
@@ -41,7 +49,15 @@
         </div>
         <div class="weui-cell">
             <div class="weui-cell__hd"><label class="weui-label">校区</label></div>
-            <div class="weui-cell__bd"><input class="weui-input" id="schoolZone" readonly value="{{ student.zone }}"></div>
+            {% if student.zone == 1 %}
+            <div class="weui-cell__bd"><input class="weui-input" id="schoolZone" readonly value="马区"></div>
+            {% endif %}
+            {% if student.zone == 2 %}
+            <div class="weui-cell__bd"><input class="weui-input" id="schoolZone" readonly value="余区"></div>
+            {% endif %}
+            {% if student.zone == 3 %}
+            <div class="weui-cell__bd"><input class="weui-input" id="schoolZone" readonly value="未知"></div>
+            {% endif %}
         </div>
         <div class="weui-cell">
             <div class="weui-cell__hd"><label class="weui-label">班级</label></div>
@@ -50,24 +66,5 @@
     </div>
     <a href="../main/" class="weui-btn weui-btn_primary">确认</a>
     <script src="../../lib/jquery-3.1.1.js"></script>
-    <script>
-        var token = window.localStorage.getItem('token')
-        $.ajax({
-            url: 'https://www.whutsims.com/be/student/getMyInfo.do',
-            method: 'POST',
-            data: { token: token },
-            success:function (res) {
-                $('#name').val(res.data.name)
-                $('#uid').val(res.data.uid)
-                $('#idcard').val(res.data.idcard)
-                $('#nation').val(res.data.nation)
-                $('#sex').val(res.data.sex)
-                $('#idcard').val(res.data.idcard)
-                $('#major').val(res.data.major)
-                $('#schoolZone').val(res.data.schoolZone)
-                $('#clazz').val(res.data.clazz)
-            }
-        })
-    </script>
 </body>
 </html>

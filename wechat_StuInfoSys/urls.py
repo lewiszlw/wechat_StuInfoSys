@@ -63,4 +63,5 @@ urlpatterns = [
     path('calendar/', views.calendar),
     path('upload-calendar/', views.upload_calendar),
 
+    path('root-main/', views.root_main),
 ]

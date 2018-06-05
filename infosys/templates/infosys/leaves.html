@@ -46,16 +46,36 @@
                   {% if leave.is_back == 1 %}
                     <tr class="danger">
                       <td>{{ leave.time }}</td>
-                      <td>{{ leave.type }}</td>
+
+                      {% if leave.type == 1 %}
+                      <td>事假</td>
+                      {% endif %}
+                      {% if leave.type == 2 %}
+                      <td>病假</td>
+                      {% endif %}
+                      {% if leave.type == 3 %}
+                      <td>其他</td>
+                      {% endif %}
+
                       <td>{{ leave.reason }}</td>
-                      <td>{{ leave.is_back }}</td>
+                      <td>未销假</td>
                     </tr>
                   {% else %}
                     <tr class="success">
                       <td>{{ leave.time }}</td>
-                      <td>{{ leave.type }}</td>
+
+                      {% if leave.type == 1 %}
+                      <td>事假</td>
+                      {% endif %}
+                      {% if leave.type == 2 %}
+                      <td>病假</td>
+                      {% endif %}
+                      {% if leave.type == 3 %}
+                      <td>其他</td>
+                      {% endif %}
+
                       <td>{{ leave.reason }}</td>
-                      <td>{{ leave.is_back }}</td>
+                      <td>已销假</td>
                     </tr>
                   {% endif %}
                 {% endfor %}

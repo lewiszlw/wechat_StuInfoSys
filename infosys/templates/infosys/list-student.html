@@ -52,11 +52,31 @@
                       <input type="hidden" value="{{ student.id }}">
                       <td>{{ student.name }}</td>
                       <td>{{ student.no }}</td>
-                      <td>{{ student.gender }}</td>
+
+                      {% if student.gender == 1 %}
+                      <td>男性</td>
+                      {% endif %}
+                        {% if student.gender == 2 %}
+                        <td>女性</td>
+                        {% endif %}
+                        {% if student.gender == 3 %}
+                        <td>未知</td>
+                        {% endif %}
+
                       <td>{{ student.identity }}</td>
                       <td>{{ student.nation }}</td>
                       <td>{{ student.major }}</td>
-                      <td>{{ student.zone }}</td>
+
+                        {% if student.zone == 1 %}
+                      <td>马区</td>
+                        {% endif %}
+                        {% if student.zone == 2 %}
+                        <td>余区</td>
+                        {% endif %}
+                        {% if student.zone == 3 %}
+                        <td>未知</td>
+                        {% endif %}
+
                       <td>{{ student.classno }}</td>
                       <td><a href="http://127.0.0.1:8000/modify-student/?studentId={{ student.id }}">修改</a> / <a href="javascript:void(0)" onclick="showDeleteModal(this)" name="{{ student.id }}">删除</a></td>
                     </tr>

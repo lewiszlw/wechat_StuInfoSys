@@ -407,8 +407,9 @@ def upload_score_cadre_rewardpunish(request):
     no = request.POST.get('no')
     f_obj = request.FILES.get('input-b1')
     from .config import UPLOAD_SCORE_CADRE_REWARDPUNISH_FOLDER
+    import os
     try:
-        f = open(UPLOAD_SCORE_CADRE_REWARDPUNISH_FOLDER + '/' + '{}.jpg'.format(no), 'wb')
+        f = open(os.getcwd() + UPLOAD_SCORE_CADRE_REWARDPUNISH_FOLDER + '/' + '{}.jpg'.format(no), 'wb')
         for chunk in f_obj.chunks():
             f.write(chunk)
         f.close()
@@ -423,8 +424,9 @@ def calendar(request):
 def upload_calendar(request):
     f_obj = request.FILES.get('input-b1')
     from .config import UPLOAD_CALENDAR_FOLDER
+    import os
     try:
-        f = open(UPLOAD_CALENDAR_FOLDER + '/' + '{}.jpg'.format('all'), 'wb')
+        f = open(os.getcwd() + UPLOAD_CALENDAR_FOLDER + '/' + '{}.jpg'.format('all'), 'wb')
         for chunk in f_obj.chunks():
             f.write(chunk)
         f.close()
@@ -433,3 +435,8 @@ def upload_calendar(request):
         return HttpResponse(json.dumps({'msg': 'fail'}))
 
 #################### Admin end ###################
+
+
+def root_main(request):
+    template = loader.get_template('infosys/root-main.html')
+    return HttpResponse(template.render(request=request))

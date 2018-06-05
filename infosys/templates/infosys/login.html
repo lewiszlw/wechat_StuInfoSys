@@ -17,7 +17,7 @@
         <div id="logo"><img src="{% static 'infosys/logo.png' %}" width="280" height="90"></div>
         <div class="form-group">
             <label class="sr-only" for="username">账号</label>
-            <input type="email" class="form-control" id="username" placeholder="账号">
+            <input type="text" class="form-control" id="username" placeholder="账号">
         </div>
         <div class="form-group">
             <label class="sr-only" for="password">密码</label>
@@ -60,6 +60,9 @@
                         }
                         if(userType == 3) {
                             window.location.href="http://127.0.0.1:8000/teacher-main/";
+                        }
+                        if(userType == 4) {
+                            window.location.href="http://127.0.0.1:8000/root-main/";
                         }
                     }
                 }

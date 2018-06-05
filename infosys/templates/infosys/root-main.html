@@ -43,30 +43,16 @@
             </div>
             <div></div>
             <div class="weui-grids">
-                <a class="weui-grid" id="about-student">
-                    <div style="background-image: url('{% static 'infosys/bag.png' %}')">
-                    </div>
-                    <p class="weui-grid__label">学生相关</p>
-                </a>
-                <a class="weui-grid" id="answer">
-                    <div style="background-image: url('{% static '/infosys/text3.png' %}')">
-                    </div>
-                    <p class="weui-grid__label">回答提问</p>
-                </a>
-                <!--
                 <a class="weui-grid" id="about-teacher">
                     <div style="background-image: url('{% static 'infosys/text2.png' %}')">
                     </div>
                     <p class="weui-grid__label">教师相关</p>
                 </a>
-                -->
             </div>
         </div>
         <script>
             let username = localStorage.getItem('username');
-            $('#about-student').attr('href', 'http://127.0.0.1:8000/about-student/');
-            $('#answer').attr('href', 'http://127.0.0.1:8000/answer/?username=' + username);
-            //$('#about-teacher').attr('href', 'http://127.0.0.1:8000/about-teacher/');
+            $('#about-teacher').attr('href', 'http://127.0.0.1:8000/about-teacher/');
         </script>
     </body>
 </html>
