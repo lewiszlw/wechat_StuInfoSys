@@ -13,7 +13,6 @@ def index(request):
     return HttpResponse(template.render(request=request))
 
 def login(request):
-    # import pdb;pdb.set_trace()
     username = request.POST.get('username')
     password = request.POST.get('password')
     user_type = int(request.POST.get('userType'))
@@ -90,11 +89,12 @@ def submit_question(request):
     return HttpResponse('success')
 
 def watch_score_cadre_rewardpunish(request):
+    #import pdb;pdb.set_trace()
     username = request.GET.get('username')
     img_name = '{}.jpg'.format(username)
     import os
     from .config import UPLOAD_SCORE_CADRE_REWARDPUNISH_FOLDER
-    if not os.path.exists(UPLOAD_SCORE_CADRE_REWARDPUNISH_FOLDER + '/' + img_name):
+    if not os.path.exists(os.getcwd() + UPLOAD_SCORE_CADRE_REWARDPUNISH_FOLDER + '/' + img_name):
         return HttpResponse('<h1>辅导员尚未上传。</h1>')
     template = loader.get_template('infosys/watch-score-cadre-rewardpunish.html')
     return HttpResponse(template.render(request=request, context={'img_name': img_name}))
@@ -104,10 +104,16 @@ def watch_calendar(request):
     img_name = 'all.jpg'
     import os
     from .config import UPLOAD_CALENDAR_FOLDER
-    if not os.path.exists(UPLOAD_CALENDAR_FOLDER + '/' + img_name):
+    if not os.path.exists(os.getcwd() + UPLOAD_CALENDAR_FOLDER + '/' + img_name):
         return HttpResponse('<h1>辅导员尚未上传。</h1>')
     template = loader.get_template('infosys/watch-calendar.html')
     return HttpResponse(template.render(request=request, context={'img_name': img_name}))
+
+def watch_reply(request):
+    username = request.GET.get('username')
+    questions = Question.objects.filter(student__no=username)
+    template = loader.get_template('infosys/watch-reply.html')
+    return HttpResponse(template.render(request=request, context={'questions': questions}))
 #################### Student end ###################
 
 
@@ -198,6 +204,11 @@ def list_student(request):
     students = Student.objects.all()
     template = loader.get_template('infosys/list-student.html')
     return HttpResponse(template.render(request=request, context={'students': students}))
+
+def list_leaves(request):
+    leaves = Leave.objects.all()
+    template = loader.get_template('infosys/list-leaves.html')
+    return HttpResponse(template.render(request=request, context={'students': leaves}))
 
 def modify_student(request):
     student_id = request.GET.get('studentId')
@@ -308,7 +319,7 @@ def batch_add_leave(request):
     return HttpResponse(template.render(request=request))
 
 def apply_batch_add_leave(request):
-    # import pdb;pdb.set_trace()
+    import pdb;pdb.set_trace()
     import xlrd
     f = request.FILES.get('input-b1')
     workbook = xlrd.open_workbook(file_contents=f.read())
@@ -364,7 +375,8 @@ def apply_modify_teacher(request):
         user.username = no
         user.save()
         return HttpResponse('success')
-    except Exception:
+    except Exception as e:
+        print(e.__traceback__)
         return HttpResponse('fail')
 
 def apply_delete_teacher(request):
@@ -398,12 +410,31 @@ def apply_add_teacher(request):
     except Exception:
         return HttpResponse('fail')
 
+def add_counsellor(request):
+    template = loader.get_template('infosys/add-counsellor.html')
+    return HttpResponse(template.render(request=request))
+
+def apply_add_counselor(request):
+    username = request.POST.get('username')
+    name = request.POST.get('name')
+    no = request.POST.get('no')
+    intro = request.POST.get('intro')
+    college = request.POST.get('college')
+    if not username or not no:
+        return HttpResponse('fail')
+
+    try:
+        Teacher.objects.create(name=name, no=no, intro=intro, college=college)
+        User.objects.create(username=no, password=no, type=User.ADMIN)
+        return HttpResponse('success')
+    except Exception:
+        return HttpResponse('fail')
+
 def score_cadre_rewardpunish(request):
     template = loader.get_template('infosys/score-cadre-rewardpunish.html')
     return HttpResponse(template.render(request=request))
 
 def upload_score_cadre_rewardpunish(request):
-    #import pdb;pdb.set_trace()
     no = request.POST.get('no')
     f_obj = request.FILES.get('input-b1')
     from .config import UPLOAD_SCORE_CADRE_REWARDPUNISH_FOLDER

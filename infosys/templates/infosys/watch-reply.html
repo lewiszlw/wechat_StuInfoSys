@@ -7,7 +7,7 @@
   <meta http-equiv="Content-Type" content="text/plain; charset=UTF-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>回答提问</title>
+  <title>查看回答提问</title>
   <link href="http://www.jq22.com/jquery/bootstrap-3.3.4.css" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'infosys/style.css' %}">
 
@@ -17,17 +17,15 @@
   <div class="container home">
 
     <div class="row">
-    	<h1 class="sub-header">回答学生提问</h1>
+    	<h1 class="sub-header">查看问题回答</h1>
 
   	<div class="table-responsive">
           <table id="firm_table" class="table table-striped table-bordered table-hover">
             <thead>
               <tr>
-                <th>提问学生</th>
                 <th>问题类型</th>
                 <th>问题描述</th>
-                <th>是否回答</th>
-                <th></th>
+                <th>教师回答</th>
               </tr>
             </thead>
             <tbody>
@@ -35,8 +33,6 @@
                 {% for question in questions %}
                   {% if question.is_answered == 0 %}
                     <tr class="danger">
-                      <td>{{ question.student.name }}</td>
-
                       {% if question.type == 1 %}
                         <td>推免报送</td>
                       {% endif %}
@@ -54,13 +50,10 @@
                       {% endif %}
 
                       <td>{{ question.desc }}</td>
-                      <td>否</td>
-                      <td><a href="/write-answer/?questionId={{ question.id }}">去回答</a></td>
+                      <td>（未回答）</td>
                     </tr>
                   {% else %}
                     <tr class="success">
-                      <td>{{ question.student.name }}</td>
-
                       {% if question.type == 1 %}
                       <td>推免报送</td>
                       {% endif %}
@@ -78,13 +71,12 @@
                       {% endif %}
 
                       <td>{{ question.desc }}</td>
-                      <td>是</td>
-                      <td><a href="/write-answer/?questionId={{ question.id }}">重新回答</a></td>
+                      <td>{{ question.reply }}</td>
                     </tr>
                   {% endif %}
                 {% endfor %}
               {% else %}
-                <p>无学生提问</p>
+                <p>无提问</p>
               {% endif%}
             </tbody>
           </table>

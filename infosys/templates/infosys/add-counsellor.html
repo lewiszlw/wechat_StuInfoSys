@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>添加教师</title>
+    <title>添加辅导员</title>
 
     <link href="http://www.jq22.com/jquery/bootstrap-3.3.4.css" rel="stylesheet">
 
@@ -14,7 +14,7 @@
             <section>
                 <div class="col-lg-8 col-lg-offset-2">
                     <div class="page-header">
-                        <h2>添加教师</h2>
+                        <h2>添加辅导员</h2>
                     </div>
 
                     <form id="defaultForm" class="form-horizontal">
@@ -67,7 +67,7 @@ $('#submitBtn').click(function() {
     let intro = $('#intro').val()
     let college = $('#college').val()
 
-    $.post('/apply-add-teacher/',
+    $.post('/apply-add-counsellor/',
         {'username': username, 'name': name, 'no': no, 'intro': intro, 'college': college, 'csrfmiddlewaretoken': '{{ csrf_token }}'},
         function(data) {
             if(data == 'fail') {

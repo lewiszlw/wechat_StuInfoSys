@@ -90,6 +90,11 @@
                     </div>
                     <p class="weui-grid__label">我要提问</p>
                 </a>
+                <a class="weui-grid" id="watchReply">
+                    <div style="background-image: url('{% static 'infosys/text1.png' %}')">
+                    </div>
+                    <p class="weui-grid__label">查看提问回答</p>
+                </a>
             </div>
         </div>
         <script>
@@ -102,6 +107,7 @@
             $('#watchRewardPunish').attr('href', '/watch-score-cadre-rewardpunish/?username=' + username);
             $('#watchCalendar').attr('href', '/watch-calendar/?username=' + username);
             $('#ask').attr('href', '/ask/');
+            $('#watchReply').attr('href', '/watch-reply/?username=' + username);
         </script>
     </body>
 </html>

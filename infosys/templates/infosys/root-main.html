@@ -40,7 +40,7 @@
                 <img src="{% static 'infosys/logo.png' %}">
                 </a>
                 <p class="page__title">
-                   家校信息沟通平台（管理员）
+                <h2 align="center">家校信息沟通平台（管理员）</h2>
                 </p>
             </div>
             <div></div>
@@ -50,11 +50,18 @@
                     </div>
                     <p class="weui-grid__label">教师相关</p>
                 </a>
+
+                <a class="weui-grid" id="add-counsellor">
+                    <div style="background-image: url('{% static 'infosys/coffe.png' %}')">
+                    </div>
+                    <p class="weui-grid__label">添加辅导员</p>
+                </a>
             </div>
         </div>
         <script>
             let username = localStorage.getItem('username');
             $('#about-teacher').attr('href', '/about-teacher/');
+            $('#add-counsellor').attr('href', '/add-counsellor/');
         </script>
     </body>
 </html>

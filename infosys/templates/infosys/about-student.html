@@ -36,7 +36,9 @@
     <body>
         <div id="container" class="container">
             <div class="page__hd">
+                <a href="/">
                 <img src="{% static 'infosys/logo.png' %}">
+                </a>
                 <p class="page__title">
                     家校信息沟通平台
                 </p>
@@ -46,6 +48,11 @@
                     <div style="background-image: url('{% static '/infosys/text3.png' %}')">
                     </div>
                     <p class="weui-grid__label">查看所有学生信息</p>
+                </a>
+                <a class="weui-grid" id="leaves">
+                    <div style="background-image: url('{% static 'infosys/house.png' %}')">
+                    </div>
+                    <p class="weui-grid__label">查看所有学生请销假信息</p>
                 </a>
                 <a class="weui-grid" id="addStudent">
                     <div style="background-image: url('{% static 'infosys/bag.png' %}')">
@@ -82,6 +89,7 @@
         <script>
             let username = localStorage.getItem('username');
             $('#listStudent').attr('href', '/list-student/');
+            $('#leaves').attr('href', '/list-leaves/');
             $('#addStudent').attr('href', '/add-student/');
             $('#batchAddStudent').attr('href', '/batch-add-student/');
             $('#batchAddCredit').attr('href', '/batch-add-credit/');

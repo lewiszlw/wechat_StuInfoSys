@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/plain; charset=UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>所有学生请销假信息</title>
+  <link href="http://www.jq22.com/jquery/bootstrap-3.3.4.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'infosys/style.css' %}">
+
+</head>
+<body>
+
+  <div class="container home">
+
+    <div class="row">
+    	<h1 class="sub-header">学生请销假信息</h1>
+
+  	<div class="top-panel">
+      <div class="btn-group">
+        <button type="button" class="btn btn-primary btn-lg dropdown-toggle" data-toggle="dropdown">Export to <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a onclick="exportTo('csv');" href="javascript://">CSV</a></li>
+          <li><a onclick="exportTo('txt');" href="javascript://">TXT</a></li>
+          <li><a onclick="exportTo('xls');" href="javascript://">XLS</a></li>
+        </ul>
+      </div>
+  	</div>
+
+  	<div class="table-responsive">
+          <table id="firm_table" class="table table-striped table-bordered table-hover">
+            <thead>
+              <tr>
+                  <th>请假时间</th>
+                  <th>请假类型</th>
+                  <th>请假原因</th>
+                  <th>是否销假</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% if leaves %}
+                {% for leave in leaves %}
+                  {% if leave.is_back == 1 %}
+                    <tr class="danger">
+                      <td>{{ leave.time }}</td>
+
+                      {% if leave.type == 1 %}
+                      <td>事假</td>
+                      {% endif %}
+                      {% if leave.type == 2 %}
+                      <td>病假</td>
+                      {% endif %}
+                      {% if leave.type == 3 %}
+                      <td>其他</td>
+                      {% endif %}
+
+                      <td>{{ leave.reason }}</td>
+                      <td>未销假</td>
+                    </tr>
+                  {% else %}
+                    <tr class="success">
+                      <td>{{ leave.time }}</td>
+
+                      {% if leave.type == 1 %}
+                      <td>事假</td>
+                      {% endif %}
+                      {% if leave.type == 2 %}
+                      <td>病假</td>
+                      {% endif %}
+                      {% if leave.type == 3 %}
+                      <td>其他</td>
+                      {% endif %}
+
+                      <td>{{ leave.reason }}</td>
+                      <td>已销假</td>
+                    </tr>
+                  {% endif %}
+                {% endfor %}
+              {% else %}
+                <p>无请销假记录</p>
+              {% endif%}
+            </tbody>
+            </tbody>
+          </table>
+        </div>
+
+    </div>
+  </div>
+  <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+  <script src="http://www.jq22.com/jquery/bootstrap-3.3.4.js"></script>
+  <script src="{% static 'infosys/tableExporter.js' %}"></script>
+  <script src="{% static 'infosys/main.js' %}"></script>
+</body>
+</html>

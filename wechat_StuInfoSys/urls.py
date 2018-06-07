@@ -30,6 +30,7 @@ urlpatterns = [
     path('submit_question/', views.submit_question),
     path('watch-score-cadre-rewardpunish/', views.watch_score_cadre_rewardpunish),
     path('watch-calendar/', views.watch_calendar),
+    path('watch-reply/', views.watch_reply),
 
 
     path('teacher-main/', views.teacher_main),
@@ -43,6 +44,7 @@ urlpatterns = [
     path('add-student/', views.add_student),
     path('apply-add-student/', views.apply_add_student),
     path('list-student/', views.list_student),
+    path('list-leaves/', views.list_leaves),
     path('modify-student/', views.modify_student),
     path('apply-modify-student/', views.apply_modify_student),
     path('apply-delete-student/', views.apply_delete_student),
@@ -58,6 +60,8 @@ urlpatterns = [
     path('apply-delete-teacher/', views.apply_delete_teacher),
     path('add-teacher/', views.add_teacher),
     path('apply-add-teacher/', views.apply_add_teacher),
+    path('add-counsellor/', views.add_counsellor),
+    path('apply-add-counsellor/', views.apply_add_counselor),
     path('score-cadre-rewardpunish/', views.score_cadre_rewardpunish),
     path('upload-score-cadre-rewardpunish/', views.upload_score_cadre_rewardpunish),
     path('calendar/', views.calendar),
